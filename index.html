@@ -103,7 +103,7 @@ footer a{color:var(--acc)}
     <div class="hint">スペース区切り。タイトル・演題名・演者名に一致すると強く加点</div>
 
     <h2>③ 条件</h2>
-    <label class="row"><input type="checkbox" id="optKey" checked> 年会長・会頭・特別講演を優先して入れる</label>
+    <label class="row"><input type="checkbox" id="optKey" > 年会長・会頭・特別講演を優先して入れる</label>
     <label class="row"><input type="checkbox" id="optZero"> 興味外の時間帯も何かしら埋める</label>
     <label class="row" style="display:block">会場移動の余裕
       <select id="buf"><option value="0">0分（連続OK）</option><option value="5">5分</option><option value="10" selected>10分</option><option value="20">20分</option></select>
@@ -185,7 +185,7 @@ const S = RAW.map((r,i)=>{
 const CATKW = CATS.map(([n,k])=>[n,k.split(/\s+/).map(s=>s.toLowerCase())]);
 
 // ---- state
-let st = {cats:{},kw:"",optKey:true,optZero:false,buf:10,days:[21,22,23],pin:[],ex:[],tab:"plan"};
+let st = {cats:{},kw:"",optKey:false,optZero:false,buf:10,days:[21,22,23],pin:[],ex:[],tab:"plan"};
 try{const s=JSON.parse(localStorage.getItem("jsphcs36"));if(s)st=Object.assign(st,s)}catch(e){}
 const save=()=>{try{localStorage.setItem("jsphcs36",JSON.stringify(st))}catch(e){}};
 
